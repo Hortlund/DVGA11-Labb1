@@ -71,12 +71,15 @@ public class View extends JFrame implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		Model model = (Model)o;
+		btn[model.btnPressed()].setPlayerTurn(model.getPlayerTurn());
 		if(model.getPlayerTurn() == 1){
 			turnText.setText("<html>Player <span style=\"font-family:Sans;font-size:13px;color:red;\">O</span> turn</html>");
 		}else {
 			turnText.setText("<html>Player <span style=\"font-family:Sans;font-size:13px;color:blue;\">X</span> turn</html>");
 		}
-		System.out.println("we are in update");
+		
+		
+		System.out.println(model.btnPressed());
 	}
 
 }
