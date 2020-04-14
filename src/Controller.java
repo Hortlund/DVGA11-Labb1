@@ -8,74 +8,43 @@ import javax.swing.JButton;
 
 
 public class Controller extends WindowAdapter implements ActionListener {
-	
-	private View gui;
 	private Model model;
-	private int turn, turns;
 	
-	public Controller(View guiIn){
-        gui = guiIn;
-        model = new Model();
+	public Controller(Model model){
+        this.model = model;
     }
-	
-	//https://codereview.stackexchange.com/questions/71756/tic-tac-toe-in-mvc
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		turn = model.playerTurn();
-		turns = model.getTurns();
-		
-		if(turn == 1) {
-			gui.turn(1);
-		}else if(turn == 2) {
-			gui.turn(2);
-		}
-		
-		if(turns == 9) {
-			gui.btnAlreadySet();
-			gui.dispose();
-			gui = new View();
-		}
-		
-		JButton ev =(JButton)e.getSource();
 		String switchButton = e.getActionCommand();
 		switch(switchButton) {
 		
-			case "b1": 
-				gui.setIcon(ev, turn);
+			case "b0": 
+				model.test();
+				break;
+				
+			case "b1":
 				break;
 				
 			case "b2":
-				gui.setIcon(ev, turn);
 				break;
 				
-			case "b3":
-				gui.setIcon(ev, turn);
+			case "b3": 
 				break;
 				
 			case "b4": 
-				gui.setIcon(ev, turn);
 				break;
 				
 			case "b5": 
-				gui.setIcon(ev, turn);
 				break;
 				
 			case "b6": 
-				gui.setIcon(ev, turn);
 				break;
 				
 			case "b7": 
-				gui.setIcon(ev, turn);
 				break;
 				
 			case "b8": 
-				gui.setIcon(ev, turn);
-				break;
-				
-			case "b9": 
-				gui.setIcon(ev, turn);
 				break;
 					
 		}
@@ -83,6 +52,7 @@ public class Controller extends WindowAdapter implements ActionListener {
 	}
 	
 	public void windowClosing(WindowEvent e){
+		System.out.println("QUIT");
         System.exit(1);
     }
 

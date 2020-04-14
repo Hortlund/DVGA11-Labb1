@@ -1,36 +1,27 @@
+import java.util.Observable;
 
-
-public class Model {
-	
-	private int playerTurn = 2;
-	private int turns;
-	
-	
-	public void drawO() {
+public class Model extends Observable {
+	private int[] board;
+	private int playerTurn;
+	public Model() {
 		
-		
-		
-	}
-	public void drawX() {
+		playerTurn = 1;
 		
 	}
 	
-	public int playerTurn() {
-		
+	public void test() {
+		System.out.println("ba");
 		if(playerTurn == 1) {
 			playerTurn = 2;
-		} else if(playerTurn == 2) {
+		}else {
 			playerTurn = 1;
 		}
-		
-		System.out.println(playerTurn);
-		turns++;
-		return playerTurn;
-		
+		setChanged();
+		notifyObservers();
 	}
-	public int getTurns() {
-		return turns;
-		
+	
+	public int getPlayerTurn() {
+		return playerTurn;
 	}
 
 }
