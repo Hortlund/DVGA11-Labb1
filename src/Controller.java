@@ -20,39 +20,39 @@ public class Controller extends WindowAdapter implements ActionListener {
 		switch(switchButton) {
 		
 			case "b0": 
-				model.test(0);
+				model.test(0,0,0);
 				break;
 				
 			case "b1":
-				model.test(1);
+				model.test(1,1,0);
 				break;
 				
 			case "b2":
-				model.test(2);
+				model.test(2,2,0);
 				break;
 				
 			case "b3": 
-				model.test(3);
+				model.test(3,0,1);
 				break;
 				
 			case "b4": 
-				model.test(4);
+				model.test(4,1,1);
 				break;
 				
 			case "b5": 
-				model.test(5);
+				model.test(5,2,1);
 				break;
 				
 			case "b6": 
-				model.test(6);
+				model.test(6,0,2);
 				break;
 				
 			case "b7": 
-				model.test(7);
+				model.test(7,1,2);
 				break;
 				
 			case "b8": 
-				model.test(8);
+				model.test(8,2,2);
 				break;
 					
 		}
@@ -60,7 +60,6 @@ public class Controller extends WindowAdapter implements ActionListener {
 	}
 	
 	public void windowClosing(WindowEvent e){
-		System.out.println("QUIT");
         System.exit(1);
     }
 

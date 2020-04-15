@@ -78,8 +78,12 @@ public class View extends JFrame implements Observer {
 			turnText.setText("<html>Player <span style=\"font-family:Sans;font-size:13px;color:blue;\">X</span> turn</html>");
 		}
 		
-		
-		System.out.println(model.btnPressed());
+		if(model.fullBoard()) {
+			JOptionPane.showMessageDialog(null, "ba", "InfoBox: " + "ba", JOptionPane.INFORMATION_MESSAGE);
+		}
+		if(model.isItemTaken()) {
+			JOptionPane.showMessageDialog(null, "ba", "InfoBox: " + "ba", JOptionPane.INFORMATION_MESSAGE);
+		}
 	}
 
 }
